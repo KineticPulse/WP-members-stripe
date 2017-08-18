@@ -1,0 +1,16 @@
+.input_large {
+	width:400px;
+}
+.input_small {
+	width:80px;
+}
+input.card-expiry-month {
+	width:40px;
+	display:inline-block;
+}
+
+input.card-expiry-year {
+	width:50px;
+	display:inline-block;
+
+}
