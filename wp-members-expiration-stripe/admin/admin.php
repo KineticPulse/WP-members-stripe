@@ -245,86 +245,28 @@ function wpmem_a_build_exp_field( $wpmem_experiod, $field )
 			break;
 	} ?>
 	<li><strong><?php echo $title; ?></strong></li>
+		<?php for ($x = 1; $x <= 4; $x++) {?>
 	<li>
-		Level 1 Cost: <?php echo wpmem_create_formfield( $field . '_cost_1', 'text', $wpmem_experiod[$field."_cost_1"], '', 'input_small' ); ?>
-		Level 1 Name: <?php echo wpmem_create_formfield( $field . '_name_1', 'text', $wpmem_experiod[$field."_name_1"], '', 'textbox' ); ?>
-		<?php echo wpmem_create_formfield( $field . '_id_1', 'hidden', 'student'); ?>
+		Level <?php echo $x;?> Cost: <?php echo wpmem_create_formfield( $field . '_cost_'.$x, 'text', $wpmem_experiod[$field."_cost_".$x], '', 'input_small' ); ?>
+		Level <?php echo $x;?> Name: <?php echo wpmem_create_formfield( $field . '_name_'.$x, 'text', $wpmem_experiod[$field."_name_".$x], '', 'textbox' ); ?>
+		<?php echo wpmem_create_formfield( $field . '_id_'.$x, 'hidden', 'student'); ?>
 
-		<select name="<?php echo $field; ?>_num_1">
+		<select name="<?php echo $field.'_num_'.$x;?>">
         <?php
 			$max = apply_filters( 'wpmem_exp_experiod_max', 12 ) + 1;
 			for( $i = 1; $i < $max; $i++ ) {
-			echo wpmem_create_formfield( $i, 'option', $i, $wpmem_experiod[$field."_num_1"] );
+			echo wpmem_create_formfield( $i, 'option', $i, $wpmem_experiod[$field."_num_".$x] );
 		} ?>
         </select>
-		<select name="<?php echo $field; ?>_period_1"><?php
-			echo wpmem_create_formfield( __( 'Day(s)', 'wp-members' ), 'option', 'day', $wpmem_experiod[$field."_per_1"] );
-			echo wpmem_create_formfield( __( 'Week(s)', 'wp-members' ), 'option', 'week', $wpmem_experiod[$field."_per_1"] );
-			echo wpmem_create_formfield( __( 'Month(s)', 'wp-members' ), 'option', 'month', $wpmem_experiod[$field."_per_1"] );
-			echo wpmem_create_formfield( __( 'Year(s)', 'wp-members' ), 'option', 'year', $wpmem_experiod[$field."_per_1"] );
+		<select name="<?php echo $field.'_period_'.$x;?>"><?php
+			echo wpmem_create_formfield( __( 'Day(s)', 'wp-members' ), 'option', 'day', $wpmem_experiod[$field."_per_".$x] );
+			echo wpmem_create_formfield( __( 'Week(s)', 'wp-members' ), 'option', 'week', $wpmem_experiod[$field."_per_".$x] );
+			echo wpmem_create_formfield( __( 'Month(s)', 'wp-members' ), 'option', 'month', $wpmem_experiod[$field."_per_".$x] );
+			echo wpmem_create_formfield( __( 'Year(s)', 'wp-members' ), 'option', 'year', $wpmem_experiod[$field."_per_".$x] );
 			?>
 		</select>
 	</li>
-	<li>
-		Level 2 Cost: <?php echo wpmem_create_formfield( $field . '_cost_2', 'text', $wpmem_experiod[$field."_cost_2"], '', 'input_small' ); ?>
-		Level 2 Name: <?php echo wpmem_create_formfield( $field . '_name_2', 'text', $wpmem_experiod[$field."_name_2"], '', 'textbox' ); ?>
-		<?php echo wpmem_create_formfield( $field . '_id_2', 'hidden', 'band_1'); ?>
-
-		<select name="<?php echo $field; ?>_num_2">
-        <?php
-			$max = apply_filters( 'wpmem_exp_experiod_max', 12 ) + 1;
-			for( $i = 1; $i < $max; $i++ ) {
-			echo wpmem_create_formfield( $i, 'option', $i, $wpmem_experiod[$field."_num_2"] );
-		} ?>
-        </select>
-		<select name="<?php echo $field; ?>_period_2"><?php
-			echo wpmem_create_formfield( __( 'Day(s)', 'wp-members' ), 'option', 'day', $wpmem_experiod[$field."_per_2"] );
-			echo wpmem_create_formfield( __( 'Week(s)', 'wp-members' ), 'option', 'week', $wpmem_experiod[$field."_per_2"] );
-			echo wpmem_create_formfield( __( 'Month(s)', 'wp-members' ), 'option', 'month', $wpmem_experiod[$field."_per_2"] );
-			echo wpmem_create_formfield( __( 'Year(s)', 'wp-members' ), 'option', 'year', $wpmem_experiod[$field."_per_2"] );
-			?>
-		</select>
-	</li>
-	<li>
-		Level 3 Cost: <?php echo wpmem_create_formfield( $field . '_cost_3', 'text', $wpmem_experiod[$field."_cost_3"], '', 'input_small' ); ?>
-		Level 3 Name: <?php echo wpmem_create_formfield( $field . '_name_3', 'text', $wpmem_experiod[$field."_name_3"], '', 'textbox' ); ?>
-		<?php echo wpmem_create_formfield( $field . '_id_3', 'hidden', 'band_2'); ?>
-
-		<select name="<?php echo $field; ?>_num_3">
-        <?php
-			$max = apply_filters( 'wpmem_exp_experiod_max', 12 ) + 1;
-			for( $i = 1; $i < $max; $i++ ) {
-			echo wpmem_create_formfield( $i, 'option', $i, $wpmem_experiod[$field."_num_3"] );
-		} ?>
-        </select>
-		<select name="<?php echo $field; ?>_period_3"><?php
-			echo wpmem_create_formfield( __( 'Day(s)', 'wp-members' ), 'option', 'day', $wpmem_experiod[$field."_per_3"] );
-			echo wpmem_create_formfield( __( 'Week(s)', 'wp-members' ), 'option', 'week', $wpmem_experiod[$field."_per_3"] );
-			echo wpmem_create_formfield( __( 'Month(s)', 'wp-members' ), 'option', 'month', $wpmem_experiod[$field."_per_3"] );
-			echo wpmem_create_formfield( __( 'Year(s)', 'wp-members' ), 'option', 'year', $wpmem_experiod[$field."_per_3"] );
-			?>
-		</select>
-	</li> 
-	<li>
-		Level 4 Cost: <?php echo wpmem_create_formfield( $field . '_cost_4', 'text', $wpmem_experiod[$field."_cost_4"], '', 'input_small' ); ?>
-		Level 4 Name: <?php echo wpmem_create_formfield( $field . '_name_4', 'text', $wpmem_experiod[$field."_name_4"], '', 'textbox' ); ?>
-		<?php echo wpmem_create_formfield( $field . '_id_4', 'hidden', 'band_3'); ?>
-
-		<select name="<?php echo $field; ?>_num_4">
-        <?php
-			$max = apply_filters( 'wpmem_exp_experiod_max', 12 ) + 1;
-			for( $i = 1; $i < $max; $i++ ) {
-			echo wpmem_create_formfield( $i, 'option', $i, $wpmem_experiod[$field."_num_4"] );
-		} ?>
-        </select>
-		<select name="<?php echo $field; ?>_period_4"><?php
-			echo wpmem_create_formfield( __( 'Day(s)', 'wp-members' ), 'option', 'day', $wpmem_experiod[$field."_per_4"] );
-			echo wpmem_create_formfield( __( 'Week(s)', 'wp-members' ), 'option', 'week', $wpmem_experiod[$field."_per_4"] );
-			echo wpmem_create_formfield( __( 'Month(s)', 'wp-members' ), 'option', 'month', $wpmem_experiod[$field."_per_4"] );
-			echo wpmem_create_formfield( __( 'Year(s)', 'wp-members' ), 'option', 'year', $wpmem_experiod[$field."_per_4"] );
-			?>
-		</select>
-	</li>
+	<?php }?>
 		   <?php
 }
 
