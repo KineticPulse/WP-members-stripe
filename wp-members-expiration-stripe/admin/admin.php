@@ -1,6 +1,6 @@
 <?php
 /**
- * WP-Members Subscription Extension Admin Functions
+ * WP-Members Subscription Extension (Stripe) Admin Functions
  *
  * Functions to manage administration.
  *
@@ -11,8 +11,8 @@
  *
  * @package WordPress
  * @subpackage WP-Members
- * @author Chad Butler
- * @copyright 2006-2014
+ * @author Kinetic Pulse
+ * @copyright 2017
  */
 
 
